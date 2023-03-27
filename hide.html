@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Labsheet3</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Forms</legend>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"> <br><br>
+
+                <label for="dob">DOB:</label>
+                <input type="Date" name="dob" id="dob"><br><br>
+
+                <div id="age1">
+                <label for="age">Age:</label>
+                <input type="number" name="age" id="age" min="18" max="30"><br><br>
+                </div>
+
+                <div id="mail1"> 
+                <label for="email">MAILID:</label>
+                <input type="email" name="email" id="email"><br><br>
+                </div>
+
+                <div id="web1"> 
+                <label for="url">WEBSITE:</label>
+                <input type="url" name="url" id="url"><br><br>
+                </div>
+                <button type="submit">submit</button>
+        </forms>
+        <script>
+            const age1=document.getElementById("age1");
+            const mail=document.getElementById("mail1");
+            const web=document.getElementById("web1");
+            age1.style.display="none";
+            mail.style.display="none";
+            web.style.display="none";
+            document.getElementById("dob").addEventListener("change", function(){
+                const age=calculateAge(this.value);
+                //document.write(age);
+                if (age<18){
+                age1.style.display="none";
+                mail.style.display="none";
+                web.style.display="none";
+                }
+                else if(age>=18 && age<=25){
+                age1.style.display="block";
+                mail.style.display="block";
+                web.style.display="none";
+                }
+                else{
+                age1.style.display="block";
+                mail.style.display="block";
+                web.style.display="block";
+                }
+                
+            });
+            
+                function calculateAge(birthday){
+                const today=new Date();
+                const birthDate=new Date(birthday);
+                let age=today.getFullYear()-birthDate.getFullYear();
+               // document.write(age);
+                return age;
+            }
+        </script>
+    </fieldset>
+</body>
+</html>

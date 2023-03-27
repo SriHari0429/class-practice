@@ -1,0 +1,57 @@
+<html>
+
+<head>
+  <title>Labsheet2</title>
+  <script type="text/javascript">
+    function valid() {
+      let Name = document.getElementById("name").value;
+      let DOB = document.getElementById("dob").value;
+      let Age = document.getElementById("age").value;
+      let MAILID = document.getElementById("email").value.indexOf("@");
+      let WEBSITE = document.getElementById("url").value;
+      if (Name == "") {
+        alert("Name is required");
+        return false;
+      }
+      else if ( Age < 25) {
+        alert("you must enter the age between 18 and 25");
+        return false;
+      }
+      else if (MAILID == -1) {
+        alert("Enter valid maild address");
+        return false;
+      }
+      else if (website == "") {
+        alert("Enter vaild url");
+        return false;
+      }
+      else
+        alert("The information is submited successfully");
+    }
+  </script>
+</head>
+
+<body>
+  <fieldset>
+    <legend>
+      <h1>HtTp Solutions</h1>
+    </legend>
+    <center>
+    <form action="" onsubmit="return valid()" method="get">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"> <br><br>
+      <label for="dob">DOB:</label>
+      <input type="Date" name="dob" id="dob"><br><br>
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" min="18" max="30"><br><br>
+      <label for="email">MAILID:</label>
+      <input type="email" name="email" id="email"><br><br>
+      <label for="url">WEBSITE:</label>
+      <input type="url" name="url" id="url"><br><br>
+      <input type="submit" value="submit"> 
+    </form>
+</center>
+  </fieldset>
+</body>
+
+</html>
